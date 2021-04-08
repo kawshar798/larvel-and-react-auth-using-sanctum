@@ -42,7 +42,6 @@ class PasswordController extends Controller
 
 
        if(!$user = User::where('email',$passwordReset->email)->first()){
-
            return 'user not found';
 //            throw new  NotFoundHttpException('User Not Found');
        }
