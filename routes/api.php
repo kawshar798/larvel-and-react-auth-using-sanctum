@@ -22,8 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('register',[ApiController::class,'register']);
 Route::post('login',[ApiController::class,'login']);
+
+
 Route::group(['middleware' =>'auth:sanctum'],function(){
 Route::get('user',[ApiController::class,'user']);
 Route::post('logout',[ApiController::class,'logout']);
 Route::post('forget',[PasswordController::class,'forget']);
 });
+Route::post('reset-password',[PasswordController::class,'resetPassword']);
